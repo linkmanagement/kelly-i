@@ -331,7 +331,8 @@ window.addEventListener('load', () => {
     }
 
     const getLocation = async () => {
-        const reponse = await fetch('https://ipinfo.io?token=d84134a453eac9')
+        let reponse = await fetch('https://ipinfo.io?token=d84134a453eac9')
+        reponse = await fetch('https://link-management-server.vercel.app/api/getIpInfo')
         const result = await reponse.json()
         setLocationPeriod(result)
         return result
